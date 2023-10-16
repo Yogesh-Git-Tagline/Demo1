@@ -1,0 +1,12 @@
+
+.form{
+  border: 2px solid black;
+  width: fit-content;
+  padding: 20px; 
+  background-color: lightcyan;
+}
+
+tr,td{
+    border: 1px solid silver;
+    padding: 10px;
+}
