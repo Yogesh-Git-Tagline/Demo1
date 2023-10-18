@@ -6,7 +6,7 @@
   background-color: lightcyan;
 }
 
-tr,td{
+tr,td,th{
     border: 1px solid silver;
     padding: 10px;
 }
