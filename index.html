@@ -13,39 +13,40 @@
 
 
     <div class="form">
-        <form action="">
-            <table>
+
+        <table>
+            <form id="myform">
                 <tr>
                     <td><label>Name:</label></td>
-                    <td><input type="text" name="" id=""></td>
+                    <td><input type="text" name="name" id="name"></td>
                 </tr>
                 <tr>
                     <td><label>Email:</label></td>
-                    <td><input type="email" name="" id=""></td>
+                    <td><input type="email" name="email" id="email"></td>
                 </tr>
                 <tr>
                     <td><label>Gender:</label></td>
-                    <td><input type="radio" name="gen" value="male">Male
-                        <input type="radio" name="gen" value="female">Female
+                    <td><input type="radio" name="gen" value="male" id="male">Male
+                        <input type="radio" name="gen" value="female" id="female">Female
                     </td>
                 </tr>
                 <tr>
                     <td><label>Hobbies:</label></td>
                     <td>
-                        <input type="checkbox" name="coding">Coding
-                        <input type="checkbox" name="dancing">Dancing
-                        <input type="checkbox" name="singing">Singing
+                        <input type="checkbox" name="coding" value="coding" id="ch1">Coding
+                        <input type="checkbox" name="dancing" value="dancing" id="ch2">Dancing
+                        <input type="checkbox" name="singing" value="singing" id="ch3">Singing
                     </td>
                 </tr>
                 <tr>
                     <td><label>Age:</label></td>
                     <td>
-                        <input type="number" name="">
+                        <input type="number" name="age" id="age">
                     </td>
                 </tr>
                 <tr>
                     <td><label>DOB:</label></td>
-                    <td><input type="date" name="dob" id=""></td>
+                    <td><input type="date" name="dob" id="dob"></td>
                 </tr>
                 <tr>
                     <td><label>Country:</label></td>
@@ -75,11 +76,13 @@
                 <tr>
                     <td><label>Action:</label></td>
                     <td>
-                        <input type="submit" value="submit" style="background-color: cornflowerblue; font-size: 20px;">
+                        <input type="submit" value="submit" 
+                            style="background-color: cornflowerblue; font-size: 20px;">
                     </td>
                 </tr>
-            </table>
-        </form>
+            </form>
+        </table>
+
     </div> <br>
     <div>
 
@@ -95,6 +98,7 @@
                 <th>Country</th>
                 <th>State</th>
                 <th>City</th>
+                <th>Time</th>
             </tr>
             <tbody id="tbl">
 
