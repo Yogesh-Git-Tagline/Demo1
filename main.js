@@ -88,39 +88,39 @@ form.addEventListener("submit", (e) => {
     document.getElementById('error').innerHTML = "plz enter the name"
     return false;
   }
-  else if(email==''){
+  else if (email == '') {
     document.getElementById('error').innerHTML = "plz enter the Email"
     return false;
   }
-  else if(newGen==undefined){
+  else if (newGen == undefined) {
     document.getElementById('error').innerHTML = "plz choose gender"
     return false;
   }
-  else if(sethobbies==''){
+  else if (sethobbies == '') {
     document.getElementById('error').innerHTML = "plz select hobbies"
     return false;
   }
-  else if(age==''){ 
+  else if (age == '') {
     document.getElementById('error').innerHTML = "plz enter Age"
     return false;
   }
-  else if(dob==''){
+  else if (dob == '') {
     document.getElementById('error').innerHTML = "plz select DOB"
     return false;
   }
-  else if(con==''){
+  else if (con == '') {
     document.getElementById('error').innerHTML = "plz select country"
     return false;
   }
-  else if(state==''){
+  else if (state == '') {
     document.getElementById('error').innerHTML = "plz select state"
     return false;
   }
-  else if(city==''){
+  else if (city == '') {
     document.getElementById('error').innerHTML = "plz select city"
     return false;
   }
-  
+
 
   data.push({
     name: name,
@@ -312,3 +312,26 @@ function deleteData(i) {
   showNewdata(data)
 }
 
+//serach
+
+function myFunction() {
+  let getname, tbl, tr, td, i, setname;
+
+  getname = document.getElementById("srname").value;
+
+  tbl = document.getElementById("data_tbl");
+
+  tr = tbl.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      setname = td.innerText;
+      if (setname.indexOf(getname) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
