@@ -76,8 +76,17 @@
                 <tr>
                     <td><label>Action:</label></td>
                     <td>
-                        <input type="submit" value="submit" 
-                            style="background-color: cornflowerblue; font-size: 20px;">
+                        <div id="addData">
+                            <input type="submit" value="submit"
+                                style="background-color: cornflowerblue; font-size: 20px;">
+                                <input type="reset" value="Reset">
+                        </div> <br>
+                        <div id="upData" style="display:none">
+                            <input type="button" value="Update">
+                        </div> <br>
+                        <div id="resetbtn" style="display:none">
+                            <input type="reset" value="Cancel">
+                        </div>
                     </td>
                 </tr>
             </form>
@@ -87,7 +96,7 @@
     <div>
 
 
-        <table>
+        <table id="data_tbl">
             <tr>
                 <th>Name</th>
                 <th>Email</th>
@@ -99,6 +108,7 @@
                 <th>State</th>
                 <th>City</th>
                 <th>Time</th>
+                <th>Action</th>
             </tr>
             <tbody id="tbl">
 
