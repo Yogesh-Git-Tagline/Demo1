@@ -19,7 +19,6 @@ const CountryCityState = {
 }
 
 
-
 let cont = document.getElementById("countries");
 let state = document.getElementById("states");
 let city = document.getElementById("cities");
@@ -84,6 +83,45 @@ form.addEventListener("submit", (e) => {
     sethobbies += ch3.value
   }
 
+  //validation
+  if (name == '') {
+    document.getElementById('error').innerHTML = "plz enter the name"
+    return false;
+  }
+  else if(email==''){
+    document.getElementById('error').innerHTML = "plz enter the Email"
+    return false;
+  }
+  else if(newGen==undefined){
+    document.getElementById('error').innerHTML = "plz choose gender"
+    return false;
+  }
+  else if(sethobbies==''){
+    document.getElementById('error').innerHTML = "plz select hobbies"
+    return false;
+  }
+  else if(age==''){ 
+    document.getElementById('error').innerHTML = "plz enter Age"
+    return false;
+  }
+  else if(dob==''){
+    document.getElementById('error').innerHTML = "plz select DOB"
+    return false;
+  }
+  else if(con==''){
+    document.getElementById('error').innerHTML = "plz select country"
+    return false;
+  }
+  else if(state==''){
+    document.getElementById('error').innerHTML = "plz select state"
+    return false;
+  }
+  else if(city==''){
+    document.getElementById('error').innerHTML = "plz select city"
+    return false;
+  }
+  
+
   data.push({
     name: name,
     email: email,
@@ -98,6 +136,7 @@ form.addEventListener("submit", (e) => {
   })
 
   showdata()
+
 })
 
 function showdata() {
@@ -228,6 +267,8 @@ function updatedata(i) {
     }
     return dt;
   });
+
+
   document.getElementById("tbl").innerHTML = ""
   showNewdata(new_data)
 }
@@ -270,3 +311,4 @@ function deleteData(i) {
   document.getElementById("tbl").innerHTML = ""
   showNewdata(data)
 }
+
