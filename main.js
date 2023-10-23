@@ -120,6 +120,10 @@ form.addEventListener("submit", (e) => {
     document.getElementById('error').innerHTML = "plz select city"
     return false;
   }
+  else {
+    document.getElementById('error').innerHTML = ''
+  }
+
 
 
   data.push({
@@ -252,21 +256,34 @@ function updatedata(i) {
   let ct = document.getElementById('cities').value
 
 
-  new_data = data.map(dt => {
+  if (nm != '' && em != '' && getGen != '' && up_hobbies != '' && ag != '' && db != '' && con != '' && stat != '' && ct != '') {
+    new_data = data.map(dt => {
 
-    if (dt.name === data[i].name) {
-      dt.name = nm;
-      dt.email = em;
-      dt.gender = newGen;
-      dt.hobbies = up_hobbies;
-      dt.age = ag;
-      dt.dob = db;
-      dt.country = con;
-      dt.state = stat;
-      dt.city = ct
-    }
-    return dt;
-  });
+      if (dt.name === data[i].name) {
+        dt.name = nm;
+        dt.email = em;
+        dt.gender = newGen;
+        dt.hobbies = up_hobbies;
+        dt.age = ag;
+        dt.dob = db;
+        dt.country = con;
+        dt.state = stat;
+        dt.city = ct
+      }
+      let btn = document.getElementById("addData")
+      let updatebtn = document.getElementById("upData")
+      let rebtn = document.getElementById("resetbtn")
+      updatebtn.style.display = 'none'
+      rebtn.style.display = 'none'
+      btn.style.display = 'block'
+      document.getElementById('error').innerHTML = ''
+      return dt;
+    });
+  }
+  else {
+    document.getElementById('error').innerHTML = 'Plz fill all required fields'
+    return false;
+  }
 
 
   document.getElementById("tbl").innerHTML = ""
