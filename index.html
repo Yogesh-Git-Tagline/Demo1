@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo1</title>
+    <title>pr</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -13,7 +13,7 @@
 
     <div class="form">
         <table>
-            <form id="myform">
+            <form id="myform" novalidate>
                 <tr>
                     <td><label>Name:</label></td>
                     <td><input type="text" name="name" id="name"> <span id="nameerror" style="color: red;"></span></td>
@@ -41,14 +41,14 @@
                 </tr>
                 <tr>
                     <td><label>DOB:</label></td>
-                    <td><input type="date" name="dob" id="dob"><span id="doberror" style="color: red;"></span></td>
+                    <td><input type="date" name="dob" id="dob"> <span id="doberror" style="color: red;"></span></td>
                 </tr>
                 <tr>
                     <td><label>Country:</label></td>
                     <td><select id="countries">
                             <option value="" disabled selected>select country</option>
 
-                        </select><span id="conerror" style="color: red;"></span></td>
+                        </select> <span id="conerror" style="color: red;"></span></td>
                 </tr>
                 <tr>
                     <td><label>State:</label></td>
@@ -64,7 +64,7 @@
                     <td><label>City:</label></td>
                     <td>
                         <select id="cities">
-                            <option value="" disabled selected>select cities</option>
+                            <option value="" disabled selected>select city</option>
                         </select>
                         <span id="cityerror" style="color: red;"></span>
                     </td>
@@ -74,15 +74,18 @@
                     <td><label>Action:</label></td>
                     <td>
                         <div id="addData">
-                            <input type="submit" value="submit"
-                                style="background-color: cornflowerblue; font-size: 20px;">
-                            <input type="reset" value="Reset" onclick="ClearErrors()">
+                            <input type="submit" value="Submit"
+                                style="background-color: rgb(159, 229, 153); font-size: 20px;">
+                            <input type="reset" value="Reset" onclick="ClearErrors()"
+                                style="background-color: rgb(247, 188, 184);font-size: 20px;">
                         </div> <br>
-                        <div id="upData" style="display:none">
-                            <input type="button" value="Update">
+                        <div id="upData" style="display:none;">
+                            <input type="button" value="Update"
+                                style="background-color: rgb(238, 240, 139);font-size: 20px;">
                         </div> <br>
-                        <div id="resetbtn" style="display:none">
-                            <input type="reset" value="Cancel">
+                        <div id="resetbtn" style="display:none;">
+                            <input type="reset" value="Cancel"
+                                style="background-color: rgb(236, 183, 183);font-size: 20px;">
                         </div>
                     </td>
                 </tr>
@@ -90,13 +93,19 @@
         </table>
 
     </div> <br>
-    <input type="text" id="srname">
-    <input type="button" value="serch" onclick="searchData()">
-    <select name="" id="sort_tbl" onchange="sort_table()">
-        <option value="" disabled selected>sort</option>
-        <option value="acending">acending</option>
-        <option value="descending">descending</option>
-    </select>
+
+    <div>
+        <input type="text" id="srname">
+        <input type="button" value="Search" onclick="searchData()"
+            style="background-color: rgb(247, 229, 116);font-size: 20px;">
+        &nbsp; &nbsp; &nbsp;
+        <select name="" id="sort_tbl" onchange="sort_table()">
+            <option value="" disabled selected>sort</option>
+            <option value="acending">acending</option>
+            <option value="descending">descending</option>
+        </select>
+    </div>
+
     <div>
 
 

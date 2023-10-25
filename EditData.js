@@ -4,6 +4,7 @@ function editData(i) {
 
     updatebtn.setAttribute("onclick", "updatedata(" + i + ")")
 
+
     addbtn.style.display = 'none'
     updatebtn.style.display = 'block'
     let cancelbtn = document.getElementById("resetbtn")
@@ -55,12 +56,13 @@ function editData(i) {
         document.getElementById("ch3").checked = true
     }
 
-
     document.getElementById("dob").value = data[i].dob
-
     document.getElementById("countries").value = data[i].country
+    document.getElementById("countries").onchange()
     document.getElementById("states").value = data[i].state
+    document.getElementById("states").onchange()
     document.getElementById("cities").value = data[i].city
+
 
 
 }
@@ -95,7 +97,7 @@ function updatedata(i) {
     }
 
     let new_dob = document.getElementById('dob').value
-    
+
     let new_country = document.getElementById('countries').value
     let new_state = document.getElementById('states').value
     let new_city = document.getElementById('cities').value
@@ -151,15 +153,20 @@ function showNewdata(new_data) {
 
         let editData = document.createElement("button")
         editData.innerHTML = "Edit"
+        editData.style.backgroundColor = "#f5e1ab"
+        editData.style.fontSize = '16px'
 
         editData.setAttribute("onclick", "editData(" + i + ")")
 
         let deleteData = document.createElement("button")
         deleteData.innerHTML = "Delete"
+        deleteData.style.backgroundColor = "#e6d9d8"
 
         deleteData.setAttribute("onclick", "deleteData(" + i + ")")
+        deleteData.style.fontSize = '16px'
 
         actionTd.appendChild(editData)
+        actionTd.append(" ")
         actionTd.appendChild(deleteData)
         trData.appendChild(actionTd)
 

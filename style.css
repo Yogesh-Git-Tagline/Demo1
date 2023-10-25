@@ -10,3 +10,8 @@ tr,td,th{
     border: 1px solid silver;
     padding: 10px;
 }
+#srname, #sort_tbl{
+ height: 25px;
+ width: 200px;
+ font-size: 18px;
+}
