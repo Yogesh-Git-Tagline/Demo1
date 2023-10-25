@@ -12,21 +12,22 @@
 <body>
 
     <div class="form">
-        <h3 id="error" style="color: red;"></h3>
         <table>
-            <form id="myform">
+            <form id="myform" novalidate>
                 <tr>
                     <td><label>Name:</label></td>
-                    <td><input type="text" name="name" id="name"></td>
+                    <td><input type="text" name="name" id="name"> <span id="nameerror" style="color: red;"></span></td>
                 </tr>
                 <tr>
                     <td><label>Email:</label></td>
-                    <td><input type="email" name="email" id="email"></td>
+                    <td><input type="email" name="email" id="email"> <span id="emailerror" style="color: red;"></span>
+                    </td>
                 </tr>
                 <tr>
                     <td><label>Gender:</label></td>
                     <td><input type="radio" name="gen" value="male" id="male">Male
                         <input type="radio" name="gen" value="female" id="female">Female
+                        <span id="generror" style="color: red;"></span>
                     </td>
                 </tr>
                 <tr>
@@ -35,24 +36,19 @@
                         <input type="checkbox" name="coding" value="coding" id="ch1">Coding
                         <input type="checkbox" name="dancing" value="dancing" id="ch2">Dancing
                         <input type="checkbox" name="singing" value="singing" id="ch3">Singing
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Age:</label></td>
-                    <td>
-                        <input type="number" name="age" id="age">
+                        <span id="hoberror" style="color: red;"></span>
                     </td>
                 </tr>
                 <tr>
                     <td><label>DOB:</label></td>
-                    <td><input type="date" name="dob" id="dob"></td>
+                    <td><input type="date" name="dob" id="dob"> <span id="doberror" style="color: red;"></span></td>
                 </tr>
                 <tr>
                     <td><label>Country:</label></td>
                     <td><select id="countries">
                             <option value="" disabled selected>select country</option>
 
-                        </select></td>
+                        </select> <span id="conerror" style="color: red;"></span></td>
                 </tr>
                 <tr>
                     <td><label>State:</label></td>
@@ -61,14 +57,16 @@
                             <option value="" disabled selected>select state</option>
 
                         </select>
+                        <span id="stateerror" style="color: red;"></span>
                     </td>
                 </tr>
                 <tr>
                     <td><label>City:</label></td>
                     <td>
                         <select id="cities">
-                            <option value="" disabled selected>select cities</option>
+                            <option value="" disabled selected>select city</option>
                         </select>
+                        <span id="cityerror" style="color: red;"></span>
                     </td>
                 </tr>
 
@@ -76,15 +74,18 @@
                     <td><label>Action:</label></td>
                     <td>
                         <div id="addData">
-                            <input type="submit" value="submit"
-                                style="background-color: cornflowerblue; font-size: 20px;">
-                            <input type="reset" value="Reset">
+                            <input type="submit" value="Submit"
+                                style="background-color: rgb(159, 229, 153); font-size: 20px;">
+                            <input type="reset" value="Reset" onclick="ClearErrors()"
+                                style="background-color: rgb(247, 188, 184);font-size: 20px;">
                         </div> <br>
-                        <div id="upData" style="display:none">
-                            <input type="button" value="Update">
+                        <div id="upData" style="display:none;">
+                            <input type="button" value="Update"
+                                style="background-color: rgb(238, 240, 139);font-size: 20px;">
                         </div> <br>
-                        <div id="resetbtn" style="display:none">
-                            <input type="reset" value="Cancel">
+                        <div id="resetbtn" style="display:none;">
+                            <input type="reset" value="Cancel"
+                                style="background-color: rgb(236, 183, 183);font-size: 20px;">
                         </div>
                     </td>
                 </tr>
@@ -92,12 +93,19 @@
         </table>
 
     </div> <br>
-    <input type="text" id="srname">
-    <input type="button" value="serch" onclick="myFunction()">
-    <select name="" id="">
-        <option value="acending">acending</option>
-        <option value="descending">descending</option>
-    </select>
+
+    <div>
+        <input type="text" id="srname">
+        <input type="button" value="Search" onclick="searchData()"
+            style="background-color: rgb(247, 229, 116);font-size: 20px;">
+        &nbsp; &nbsp; &nbsp;
+        <select name="" id="sort_tbl" onchange="sort_table()">
+            <option value="" disabled selected>sort</option>
+            <option value="acending">acending</option>
+            <option value="descending">descending</option>
+        </select>
+    </div>
+
     <div>
 
 
@@ -107,7 +115,6 @@
                 <th>Email</th>
                 <th>Gender</th>
                 <th>Hobbies</th>
-                <th>Age</th>
                 <th>DOB</th>
                 <th>Country</th>
                 <th>State</th>
@@ -121,7 +128,17 @@
         </table>
     </div>
 
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+    <script src="staticData.js"></script>
+    <script src="AddData.js"></script>
+    <script src="viewData.js"></script>
+    <script src="EditData.js"></script>
+    <script src="DeleteData.js"></script>
+    <script src="SearchData.js"></script>
+    <script src="Validation.js"></script>
+    <script src="Dropdown.js"></script>
+    <script src="SortTable.js"></script>
 </body>
 
 </html>
